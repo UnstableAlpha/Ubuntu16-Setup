@@ -121,13 +121,14 @@ cd /opt/00-testing-tools/02-scanning/arp-scan && autoreconf --install && ./confi
 cd /opt/00-testing-tools/03-enumeration/sslyze && pip install -r requirements.txt --target ./lib && \
 cd /opt/00-testing-tools/03-enumeration/ && \
 wget https://labs.portcullis.co.uk/download/enum4linux-0.8.9.tar.gz && wget https://labs.portcullis.co.uk/download/polenum-0.2.tar.bz2 && \
-wget http://www.nothink.org/codes/snmpcheck/snmpcheck-1.9.rb && \
+mkdir snmpcheck && cd snmpcheck && wget http://www.nothink.org/codes/snmpcheck/snmpcheck-1.9.rb && \
 mkdir nbtscan && cd nbtscan && wget http://www.unixwiz.net/tools/nbtscan-source-1.0.35.tgz && \
 tar -xvzf nbtscan-source-1.0.35.tgz && make && \
 wget http://www.hackingciscoexposed.com/tools/ntp-fingerprint.tar.gz && \
 tar -xvzf ntp-fingerprint.tar.gz && mv ntp-fingerprint ntpfingerprint && \
 mv ntpfingerprint/ntp-fingerprint.pl ntpfingerprint/ntpfingerprint.pl && rm -r ntp-fingerprint.tar.gz && \
-cd .. && tar -xvzf enum4linux-0.8.9.tar.gz && tar -xvf polenum-0.2.tar.bz2 && \
+cd /opt/00-testing-tools/03-enumeration && tar -xvzf enum4linux-0.8.9.tar.gz && tar -xvf polenum-0.2.tar.bz2 && \
+mv enum4linux-0.8.9 enum4linux && mv polenum-0.2 polenum && rm -r enum4linux-0.8.9.tar.gz polenum-0.2.tar.bz2 && \
 chmod +x fierce/fierce.pl && chmod +x frogger/frogger.sh && \
 cd wpscan && bundle install && \
 cd /opt/00-testing-tools/03-enumeration/ike-scan && autoreconf --install && \
@@ -198,20 +199,20 @@ updatedb
 
 
 
-frogger - check works with new-style interface naming
-hard-set csv path for searchsploit in exploitdb folder
-cleanup script for responder, eyewitness, discover scripts, etc
-copy in irmtools & relevant stuff from armoury
-consider changing john install process to provide GPU support
-wordlists??
-wireless tools
-add scripts to relevant directories
-install crunch from sourceforge
-check symlinks all work from cli
-remember to launch msfconsole as normal user to setup local db!
-OCLhashcat setup for vid card??
-change gladius.py to point to all correct file paths for hashcat, etc
-configure gitrob to create db, add api key, etc
-Run setup scripts for eyewitness, discover scripts, smbexec, Veil-Framework, smb-exec, crackmapexec
-configure API keys for recon-ng
-import token to stoken
+# frogger - check works with new-style interface naming
+# hard-set csv path for searchsploit in exploitdb folder
+# cleanup script for responder, eyewitness, discover scripts, etc
+# copy in irmtools & relevant stuff from armoury
+# consider changing john install process to provide GPU support
+# wordlists??
+# wireless tools
+# add scripts to relevant directories
+# install crunch from sourceforge
+# check symlinks all work from cli
+# remember to launch msfconsole as normal user to setup local db!
+# OCLhashcat setup for vid card??
+# change gladius.py to point to all correct file paths for hashcat, etc
+# configure gitrob to create db, add api key, etc
+# Run setup scripts for eyewitness, discover scripts, smbexec, Veil-Framework, smb-exec, crackmapexec
+# configure API keys for recon-ng
+# import token to stoken
