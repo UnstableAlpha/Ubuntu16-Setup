@@ -116,7 +116,7 @@ cd gitrob && gem install gitrob && \
 
 cd /opt/00-testing-tools/02-scanning/masscan && make && \
 cd /opt/00-testing-tools/02-scanning/nmap && ./configure --without-zenmap && make && make install && \
-cd /opt/00-testing-tools/02-scanning/arp-scan && autoreconf --install && ./configure && make && make install
+cd /opt/00-testing-tools/02-scanning/arp-scan && autoreconf --install && ./configure && make && make install && \
 
 cd /opt/00-testing-tools/03-enumeration/sslyze && pip install -r requirements.txt --target ./lib && \
 cd /opt/00-testing-tools/03-enumeration/ && \
@@ -160,7 +160,7 @@ mkdir wce && unzip wce_v1_41beta_universal.zip -d wce/ && rm wce_v1_41beta_unive
 svn checkout http://rexgen.googlecode.com/svn/trunk/ rexgen && cd rexgen/src && mkdir build && cd build && \
 cmake .. && make && sudo make install && cd /opt/00-testing-tools/06-password-tools/ && \
 cd /opt/00-testing-tools/06-password-tools/john/src && ./configure --enable-mpi && \
-make -s clean && make -sj4
+make -s clean && make -sj4 && \
 
 ln -s /usr/bin/wireshark /opt/00-testing-tools/05-network-tools/wireshark && \
 ln -s /usr/bin/yersinia /opt/00-testing-tools/05-network-tools/yersinia && \
@@ -196,8 +196,6 @@ ln -s /opt/00-testing-tools/04-exploitation/Veil/Veil-Evasion/Veil-Evasion.py /u
 ln -s /opt/00-testing-tools/06-password-tools/hashcat/hashcat-cli64.bin /usr/bin/hashcat && \
 
 updatedb
-
-
 
 # frogger - check works with new-style interface naming
 # hard-set csv path for searchsploit in exploitdb folder
