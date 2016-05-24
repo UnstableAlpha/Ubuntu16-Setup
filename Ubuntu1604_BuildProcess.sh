@@ -14,8 +14,6 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 && \
 add-apt-repository -y ppa:webupd8team/sublime-text-2 && add-apt-repository -y ppa:atareao/telegram && \
 add-apt-repository ppa:openjdk-r/ppa && \
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - && \
-echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list && \
 echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.list && \
 
 # Create folder structure
@@ -25,6 +23,13 @@ mkdir /opt/00-testing-tools && \
 mkdir /opt/00-testing-tools/{01-recon-osint,02-scanning,03-enumeration,04-exploitation,05-network-tools,06-password-tools,07-wireless-tools,08-config-reviews} && \
 chown -R jb /opt/00-testing-tools/ && chgrp -R jb /opt/00-testing-tools/ && \
 chown -R jb /test && chgrp -R jb /test && \
+
+# Install proper window manager & remove Unity
+
+echo "Updating repo's and Installing a proper window manager..."
+apt-get update && apt-get install -y xubuntu-desktop
+echo "Removing bloatware & useless applications..."
+apt-get remove -y ubuntu-desktop ^unity* && apt-get autoclean
 
 # Install packages
 
